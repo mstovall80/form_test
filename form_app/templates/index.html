@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'style.css' %}"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+
+<div id="indexcontainer">
+    <form action='/create_user' method='POST' class="display">
+    {% csrf_token %}
+    <label class="form-label">Your Name:</label>  <input class="form-control" type='text' name='name'>
+        <label class="form-label">Dojo location:</label> 
+        <select class="form-control" name="location" id="location">
+            <option value="san Jose">san Jose</option>
+            <option value="tulsa">tulsa</option>
+            <option value="">dunkan</option>
+        </select>
+        <label class="form-label" for="">Favorite language:</label>
+        <select class="form-control" name="language" id="language">
+            <option value="englis">english</option>
+            <option value="spanish">spanish</option>
+            <option value="german">german</option>
+        </select>
+        <button class="btn btn-primary" type='submit'>Button</button>
+    </form>
+</div>
+
+</body>
+</html>
